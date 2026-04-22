@@ -6,12 +6,18 @@
 ## ファイル構成
 ```
 ai-clean-systems-site/
-├── index.html          サイト本体（自己完結：base64画像 + Google Fonts のみ外部依存）
+├── index.html          Pattern B（施工ギャラリー入り／推奨）
+├── pattern-a/
+│   └── index.html      Pattern A（別案／施工ギャラリー無し・431KB）
 ├── README.md           このファイル（公開手順）
 ├── REQUEST.md          サカリヤラボチーム宛の依頼書
 ├── DESIGN-BRIEF.md     Canvaデザイン依頼の要件書
 └── .gitignore
 ```
+
+## 公開URL
+- Pattern B（メイン）：https://kbirdsea-blip.github.io/ai-clean-systems/
+- Pattern A：https://kbirdsea-blip.github.io/ai-clean-systems/pattern-a/
 
 ## ローカルで確認する
 ```bash
