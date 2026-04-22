@@ -96,11 +96,14 @@ nav a:hover { color: var(--blue-light); }
   animation: fadeUp 0.7s ease both;
 }
 .hero-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(52px, 7vw, 88px);
+  font-family: 'Barlow Condensed', 'Noto Sans JP', sans-serif;
+  font-size: clamp(40px, 7vw, 88px);
   font-weight: 800; color: var(--white);
-  line-height: 1.0; letter-spacing: -1px; margin-bottom: 10px;
+  line-height: 1.12; letter-spacing: -1px; margin-bottom: 14px;
   animation: fadeUp 0.7s 0.1s ease both;
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(34px, 9vw, 44px); line-height: 1.18; }
 }
 .hero-title .hl { color: var(--blue-light); }
 .hero-sub {
@@ -558,7 +561,7 @@ footer {
       <h1 class="hero-title">
         汚れは<br>
         <span class="hl">残さない</span><br>
-        クリーンに解決
+        クリーンに<br>解決
       </h1>
       <p class="hero-sub">
         歯科医院・医療機関・介護施設・浴場・温泉宿・ホテル・<br>
@@ -742,7 +745,7 @@ footer {
           <div class="special-price-box">
             <div>
               <span class="sp-label">参考価格</span>
-              <div class="sp-price">¥30,000〜</div>
+              <div class="sp-price">¥35,000〜</div>
               <p class="sp-note">※現場状況により異なります。まずは無料相談。</p>
             </div>
           </div>
@@ -754,13 +757,13 @@ footer {
           <span class="special-photo-label">High Pressure Wash</span>
         </div>
         <div class="special-body">
-          <p class="special-name">💦 排水管高圧洗浄</p>
-          <p class="special-desc">詰まり・悪臭・油脂固化——高圧水流で排水管の内部を根本からクリーニング。飲食店・マンション・工場まで対応。</p>
+          <p class="special-name">💦 高圧洗浄（排水管・外壁・エントランス）</p>
+          <p class="special-desc">詰まり・悪臭・油脂固化・外壁や床の汚れまで——高圧水流で根本からクリーニング。飲食店・マンション・工場・ホテル・モールまで対応。</p>
           <div class="special-price-box">
             <div>
               <span class="sp-label">参考価格</span>
-              <div class="sp-price">¥15,000〜</div>
-              <p class="sp-note">※管の長さ・状態により変動します。</p>
+              <div class="sp-price">¥55,000〜</div>
+              <p class="sp-note">※規模・箇所数により変動します。</p>
             </div>
           </div>
         </div>

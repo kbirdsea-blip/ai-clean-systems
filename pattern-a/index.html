@@ -155,17 +155,20 @@ nav a:hover { color: var(--blue-light); }
 }
 
 .hero-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(48px, 6vw, 80px);
+  font-family: 'Barlow Condensed', 'Noto Sans JP', sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
   font-weight: 800;
   color: var(--white);
-  line-height: 1.0;
+  line-height: 1.12;
   letter-spacing: -1px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .hero-title .highlight {
   color: var(--blue-light);
   position: relative;
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(32px, 9vw, 44px); line-height: 1.18; }
 }
 
 .hero-subtitle {
@@ -796,7 +799,7 @@ footer {
       <h1 class="hero-title">
         汚れは<br>
         <span class="highlight">残さない</span><br>
-        クリーンに解決
+        クリーンに<br>解決
       </h1>
       <p class="hero-desc">
         歯科医院・医療機関・介護施設・浴場・温泉宿・ホテル・<br>
@@ -931,7 +934,7 @@ footer {
         <div class="special-price-box">
           <div>
             <span class="sp-label">お見積もり参考価格</span>
-            <div class="sp-price">¥30,000〜</div>
+            <div class="sp-price">¥35,000〜</div>
             <p class="sp-note">※現場状況により異なります。まずは無料相談。</p>
           </div>
         </div>
@@ -944,7 +947,7 @@ footer {
         <div class="special-price-box">
           <div>
             <span class="sp-label">お見積もり参考価格</span>
-            <div class="sp-price">¥15,000〜</div>
+            <div class="sp-price">¥55,000〜</div>
             <p class="sp-note">※管の長さ・状態により変動します。</p>
           </div>
         </div>
