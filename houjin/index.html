@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法人・店舗向け清掃契約 | 株式会社 Ai Clean Systems（ACS総合ビルメンテナンス）</title>
+<meta name="description" content="法人・店舗・事業所向けの月額契約清掃。日常清掃・定期清掃・特殊清掃・粗大ごみ処理まで一括対応。神奈川・東京・埼玉・千葉の首都圏全域。代表取締役：安食 成史。フリーダイヤル0120-168-885。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --blue-primary: #1B8CE8;
+  --blue-light: #4EAFFF;
+  --blue-pale: #E8F4FF;
+  --gold: #D4A05E;
+  --gold-light: #F5E6CC;
+  --white: #FFFFFF;
+  --gray-100: #F4F7FA;
+  --gray-300: #C8D4E0;
+  --gray-500: #6B7E94;
+  --gray-700: #2D3F52;
+  --text: #0F1E30;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+/* Header */
+.bar-top { background: var(--navy); color: white; padding: 8px 0; text-align: center; font-size: 12px; letter-spacing: 0.5px; }
+.bar-top strong { color: var(--gold); }
+header { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-100); z-index: 100; }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--navy); font-size: 18px; }
+.logo-badge { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--blue-primary), var(--navy)); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
+.logo-text-sub { font-size: 10px; color: var(--gray-500); display: block; font-weight: 500; }
+.header-nav { display: flex; align-items: center; gap: 32px; }
+.header-nav a { font-size: 14px; font-weight: 500; color: var(--gray-700); }
+.header-nav a:hover { color: var(--blue-primary); }
+.header-cta { background: var(--blue-primary); color: white !important; padding: 10px 20px; border-radius: 999px; font-weight: 700; font-size: 13px; }
+.header-cta:hover { background: var(--blue-light); }
+@media (max-width: 768px) {
+  .header-nav { gap: 16px; }
+  .header-nav a:not(.header-cta) { display: none; }
+}
+
+/* Hero */
+.hero { position: relative; padding: 80px 24px 100px; background: linear-gradient(135deg, var(--navy) 0%, #122844 50%, var(--blue-primary) 100%); color: white; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+.hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+.hero-tag { display: inline-block; background: rgba(212,160,94,0.2); border: 1px solid var(--gold); color: var(--gold); padding: 6px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+.hero-title { font-size: clamp(36px, 6vw, 64px); font-weight: 800; margin-top: 24px; line-height: 1.2; letter-spacing: -0.02em; }
+.hero-title .accent { color: var(--gold); }
+.hero-sub { font-size: 18px; color: rgba(255,255,255,0.7); margin-top: 24px; max-width: 640px; line-height: 1.8; }
+.hero-actions { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary { background: var(--gold); color: var(--navy); padding: 16px 32px; border-radius: 999px; font-weight: 800; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 2px solid white; color: white; padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; }
+.btn-outline:hover { background: white; color: var(--navy); }
+
+.hero-stats { margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 800px; }
+.hero-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 20px; backdrop-filter: blur(10px); }
+.hero-stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: var(--gold); line-height: 1; }
+.hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+/* Section */
+.section { padding: 100px 24px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.label { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--blue-primary); }
+.title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--navy); margin-top: 8px; line-height: 1.3; letter-spacing: -0.02em; }
+.title .blue { color: var(--blue-primary); }
+.title .gold { color: var(--gold); }
+.lead { font-size: 16px; color: var(--gray-500); margin-top: 16px; max-width: 720px; line-height: 1.8; }
+
+/* Benefits */
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 56px; }
+.benefit { background: white; border: 1px solid var(--gray-100); border-radius: 20px; padding: 32px; transition: all 0.3s; }
+.benefit:hover { box-shadow: 0 16px 48px rgba(27,140,232,0.12); transform: translateY(-4px); }
+.benefit-icon { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--blue-pale), white); display: flex; align-items: center; justify-content: center; font-size: 28px; }
+.benefit-num { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--gold); margin-top: 16px; letter-spacing: 2px; }
+.benefit-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-top: 8px; line-height: 1.4; }
+.benefit-desc { font-size: 14px; color: var(--gray-500); margin-top: 12px; line-height: 1.8; }
+
+/* Service */
+.bg-pale { background: linear-gradient(180deg, var(--gray-100) 0%, white 100%); }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 56px; }
+.svc-item { background: white; border-radius: 16px; padding: 24px; border-left: 4px solid var(--blue-primary); box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+.svc-item .icon { font-size: 28px; margin-bottom: 8px; }
+.svc-item h3 { font-size: 16px; font-weight: 700; color: var(--navy); }
+.svc-item p { font-size: 13px; color: var(--gray-500); margin-top: 4px; }
+
+/* Industries */
+.bg-navy { background: var(--navy); color: white; }
+.bg-navy .label { color: var(--gold); }
+.bg-navy .title { color: white; }
+.bg-navy .lead { color: rgba(255,255,255,0.7); }
+.industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 56px; }
+.industry { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 16px; text-align: center; transition: all 0.3s; }
+.industry:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
+.industry-emoji { font-size: 40px; }
+.industry-name { font-size: 15px; font-weight: 700; margin-top: 12px; }
+.industry-tag { font-size: 11px; color: var(--gold); margin-top: 6px; letter-spacing: 1px; }
+
+/* Pricing */
+.plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 56px; }
+.plan { background: white; border: 1px solid var(--gray-100); border-radius: 20px; padding: 32px; position: relative; transition: all 0.3s; }
+.plan.featured { border: 2px solid var(--gold); box-shadow: 0 16px 48px rgba(212,160,94,0.2); transform: scale(1.04); }
+.plan.featured::before { content: 'おすすめ'; position: absolute; top: -12px; right: 24px; background: var(--gold); color: var(--navy); padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 800; }
+.plan-name { font-size: 14px; color: var(--blue-primary); font-weight: 700; letter-spacing: 1px; }
+.plan-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-top: 4px; }
+.plan-price { margin-top: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--gray-100); }
+.plan-price .num { font-family: 'Barlow Condensed', sans-serif; font-size: 44px; font-weight: 800; color: var(--blue-primary); line-height: 1; }
+.plan-price .unit { font-size: 14px; color: var(--gray-500); margin-left: 4px; }
+.plan-price .from { font-size: 12px; color: var(--gray-500); display: block; margin-top: 4px; }
+.plan ul { list-style: none; margin-top: 20px; padding: 0; }
+.plan li { font-size: 13px; color: var(--gray-700); padding: 8px 0 8px 24px; position: relative; }
+.plan li::before { content: '✓'; position: absolute; left: 0; color: var(--blue-primary); font-weight: 800; }
+
+/* Flow */
+.flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 56px; }
+.flow-step { text-align: center; position: relative; }
+.flow-num { width: 64px; height: 64px; border-radius: 50%; background: var(--blue-primary); color: white; display: inline-flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed'; font-size: 28px; font-weight: 800; }
+.flow-step h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-top: 16px; }
+.flow-step p { font-size: 12px; color: var(--gray-500); margin-top: 8px; }
+
+/* CTA */
+.cta { background: linear-gradient(135deg, var(--navy), var(--blue-primary)); color: white; text-align: center; padding: 80px 24px; }
+.cta h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; }
+.cta h2 .gold { color: var(--gold); }
+.cta p { font-size: 16px; color: rgba(255,255,255,0.8); margin-top: 16px; }
+.cta-row { margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Form */
+.form-area { background: white; max-width: 720px; margin: 56px auto 0; padding: 40px; border-radius: 20px; box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { margin-bottom: 16px; }
+.form-label { font-size: 13px; font-weight: 700; color: var(--navy); display: block; margin-bottom: 6px; }
+.form-input, .form-select, .form-textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--gray-300); border-radius: 10px; font-size: 14px; font-family: inherit; background: white; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--blue-primary); }
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-submit { width: 100%; background: var(--blue-primary); color: white; border: 0; padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 800; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+.form-submit:hover { background: var(--navy); }
+
+/* Footer */
+footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 56px 24px 24px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+.footer-brand-name { color: white; font-weight: 700; font-size: 18px; }
+.footer-brand-sub { font-size: 13px; margin-top: 8px; line-height: 1.8; }
+.footer-col h5 { color: white; font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 13px; padding: 4px 0; color: rgba(255,255,255,0.6); }
+.footer-col a:hover { color: white; }
+.footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="bar-top">
+  <strong>🏢 法人・店舗・事業所さま専用ページ</strong> ｜ 月額契約・複数拠点割引・全社一括見積もり対応
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-badge">Ai</div>
+      <div>
+        Clean Systems
+        <span class="logo-text-sub">ACS総合ビルメンテナンス</span>
+      </div>
+    </a>
+    <div class="header-nav">
+      <a href="#benefits">5つの価値</a>
+      <a href="#services">サービス</a>
+      <a href="#plans">プラン</a>
+      <a href="#flow">導入の流れ</a>
+      <a href="#contact" class="header-cta">📞 法人窓口</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">⚡ FOR BUSINESS / B2B SOLUTION</span>
+    <h1 class="hero-title">
+      法人の清掃を、<br>
+      <span class="accent">月額契約で</span>丸ごと任せる。
+    </h1>
+    <p class="hero-sub">
+      飲食チェーン・医療施設・ホテル・ショッピングモール・オフィスビルまで——清掃計画から実行・品質管理まで、Ai Clean Systemsが一括でお引き受けします。複数拠点の一括契約も歓迎。
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">📞 法人専用 無料相談 →</a>
+      <a href="#plans" class="btn-outline">月額プランを見る</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">4<span style="font-size:18px;">都県</span></div>
+        <div class="hero-stat-label">神奈川・東京・埼玉・千葉</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">8<span style="font-size:18px;">サービス</span></div>
+        <div class="hero-stat-label">日常〜定期〜特殊清掃まで</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24<span style="font-size:18px;">h</span></div>
+        <div class="hero-stat-label">緊急対応・即日見積もり</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">¥0</div>
+        <div class="hero-stat-label">現地調査・見積もり費用</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="section" id="benefits">
+  <div class="section-inner">
+    <span class="label">WHY ACS FOR BUSINESS</span>
+    <h2 class="title">法人契約だから得られる<span class="gold">5つの価値</span></h2>
+    <p class="lead">単発依頼ではなく、月額契約で清掃を仕組み化することで、コスト最適化と品質安定の両方を実現します。</p>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="benefit-icon">💴</div>
+        <p class="benefit-num">VALUE 01</p>
+        <p class="benefit-title">月額固定で<br>清掃コスト最適化</p>
+        <p class="benefit-desc">作業頻度・面積・業種に応じた月額固定プランで、突発的な出費を抑制。年間予算が組みやすくなります。</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">🏢</div>
+        <p class="benefit-num">VALUE 02</p>
+        <p class="benefit-title">複数拠点の<br>一括契約割引</p>
+        <p class="benefit-desc">2店舗目以降は割引適用。チェーン店・複数オフィスを持つ企業さまの統一管理を実現します。</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">📋</div>
+        <p class="benefit-num">VALUE 03</p>
+        <p class="benefit-title">担当者固定で<br>品質を安定化</p>
+        <p class="benefit-desc">毎回違うスタッフが来る心配なし。固定スタッフが現場特性を把握し、施設に最適化された清掃を実施。</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">📊</div>
+        <p class="benefit-num">VALUE 04</p>
+        <p class="benefit-title">清掃レポート<br>毎月提出</p>
+        <p class="benefit-desc">作業内容・所要時間・気付き事項を月次レポートで報告。経営層・本部報告にもそのまま使えます。</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">⚡</div>
+        <p class="benefit-num">VALUE 05</p>
+        <p class="benefit-title">緊急対応<br>24時間受付</p>
+        <p class="benefit-desc">設備故障・水漏れ・特殊清掃が必要になった時も、契約企業さまは優先対応。最短即日駆けつけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section bg-pale" id="services">
+  <div class="section-inner">
+    <span class="label">SERVICE LINEUP</span>
+    <h2 class="title">8つの<span class="blue">法人サービス</span></h2>
+    <p class="lead">日常業務から特殊清掃・廃棄物処理まで、施設運営に必要な清掃をワンストップで提供します。</p>
+    <div class="svc-grid">
+      <div class="svc-item"><div class="icon">🏠</div><h3>ハウスクリーニング</h3><p>社宅・社員寮・退去清掃</p></div>
+      <div class="svc-item"><div class="icon">🧽</div><h3>床清掃・ワックス</h3><p>ポリッシャー・ワックス・剥離</p></div>
+      <div class="svc-item"><div class="icon">❄️</div><h3>エアコン洗浄</h3><p>分解洗浄・天カセ対応</p></div>
+      <div class="svc-item"><div class="icon">🍳</div><h3>厨房清掃</h3><p>グリストラップ・フード</p></div>
+      <div class="svc-item"><div class="icon">🚿</div><h3>排水管清掃</h3><p>高圧洗浄・配管メンテ</p></div>
+      <div class="svc-item"><div class="icon">🌀</div><h3>空調排気ダクト清掃</h3><p>火災予防・空気環境改善</p></div>
+      <div class="svc-item"><div class="icon">🐜</div><h3>害虫駆除</h3><p>ゴキブリ・ネズミ・シロアリ</p></div>
+      <div class="svc-item"><div class="icon">📦</div><h3>粗大ごみ処理</h3><p>パートナー連携・一括回収</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section class="section bg-navy">
+  <div class="section-inner">
+    <span class="label">INDUSTRIES</span>
+    <h2 class="title">業種別<span class="gold">対応実績</span></h2>
+    <p class="lead">医療・宿泊・飲食・小売・物流まで、業種特性を理解した清掃計画を立案します。</p>
+    <div class="industry-grid">
+      <div class="industry"><div class="industry-emoji">🦷</div><div class="industry-name">歯科・医療</div><p class="industry-tag">院内清掃・感染対策</p></div>
+      <div class="industry"><div class="industry-emoji">🏥</div><div class="industry-name">病院・介護</div><p class="industry-tag">定期消毒・浴室清掃</p></div>
+      <div class="industry"><div class="industry-emoji">♨️</div><div class="industry-name">ホテル・温泉</div><p class="industry-tag">客室・浴場・厨房</p></div>
+      <div class="industry"><div class="industry-emoji">🛍️</div><div class="industry-name">商業施設・モール</div><p class="industry-tag">共用部・フードコート</p></div>
+      <div class="industry"><div class="industry-emoji">🏪</div><div class="industry-name">コンビニ・小売</div><p class="industry-tag">店内・トイレ・バックヤード</p></div>
+      <div class="industry"><div class="industry-emoji">🍜</div><div class="industry-name">飲食店・チェーン</div><p class="industry-tag">厨房・客席・換気扇</p></div>
+      <div class="industry"><div class="industry-emoji">🏢</div><div class="industry-name">オフィス・事務所</div><p class="industry-tag">日常・定期・エアコン</p></div>
+      <div class="industry"><div class="industry-emoji">🏭</div><div class="industry-name">工場・物流倉庫</div><p class="industry-tag">床・配管・高圧洗浄</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Plans -->
+<section class="section" id="plans">
+  <div class="section-inner">
+    <span class="label">MONTHLY PLANS</span>
+    <h2 class="title">法人向け<span class="blue">月額プラン</span></h2>
+    <p class="lead">業種・拠点規模に応じた3つの基本プラン。ご要望に応じてカスタムプランも作成可能です。</p>
+    <div class="plan-grid">
+      <div class="plan">
+        <p class="plan-name">STARTER</p>
+        <p class="plan-title">スタータープラン</p>
+        <div class="plan-price">
+          <span class="num">¥15,000</span><span class="unit">/月〜</span>
+          <span class="from">小規模オフィス・店舗向け</span>
+        </div>
+        <ul>
+          <li>週1回の日常清掃</li>
+          <li>共用部・トイレ・床面清掃</li>
+          <li>ゴミ出し・備品補充</li>
+          <li>月次レポート</li>
+          <li>緊急時の優先対応</li>
+        </ul>
+      </div>
+      <div class="plan featured">
+        <p class="plan-name">STANDARD</p>
+        <p class="plan-title">スタンダードプラン</p>
+        <div class="plan-price">
+          <span class="num">¥40,000</span><span class="unit">/月〜</span>
+          <span class="from">中規模店舗・複数フロア向け</span>
+        </div>
+        <ul>
+          <li>週3〜4回の日常清掃</li>
+          <li>定期清掃（床ワックス年4回）</li>
+          <li>エアコン洗浄 年2回</li>
+          <li>担当スタッフ固定制</li>
+          <li>月次レポート＋写真報告</li>
+          <li>24h緊急対応・優先枠確保</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <p class="plan-name">PREMIUM</p>
+        <p class="plan-title">プレミアムプラン</p>
+        <div class="plan-price">
+          <span class="num">¥80,000</span><span class="unit">/月〜</span>
+          <span class="from">複数拠点・大型施設向け</span>
+        </div>
+        <ul>
+          <li>毎日の日常清掃（週6回）</li>
+          <li>全定期清掃メニュー込み</li>
+          <li>害虫駆除・ダクト清掃</li>
+          <li>専任マネージャー配属</li>
+          <li>四半期レビュー会議</li>
+          <li>複数拠点一括割引適用</li>
+          <li>本部・経理連携サポート</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:32px;text-align:center;font-size:13px;color:var(--gray-500);">※上記は標準プラン例です。施設規模・業種により最適プランをご提案します。<br>※2拠点目以降は10%、5拠点目以降は15%割引適用。</p>
+  </div>
+</section>
+
+<!-- Flow -->
+<section class="section bg-pale" id="flow">
+  <div class="section-inner">
+    <span class="label">HOW IT WORKS</span>
+    <h2 class="title">導入までの<span class="blue">5ステップ</span></h2>
+    <p class="lead">最短即日で見積もり、契約から1週間以内に清掃開始可能です。</p>
+    <div class="flow-grid">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h4>お問い合わせ</h4>
+        <p>電話・メール・フォームで受付</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h4>現地調査</h4>
+        <p>無料で訪問・要件ヒアリング</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h4>プラン提案</h4>
+        <p>業種特化の最適プランを提示</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h4>契約・初回作業</h4>
+        <p>契約から最短1週間で開始</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <h4>定期運用</h4>
+        <p>月次レポートで品質可視化</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + Form -->
+<section class="cta" id="contact">
+  <div style="max-width:900px;margin:0 auto;">
+    <span class="label" style="color:var(--gold);">CONTACT FOR BUSINESS</span>
+    <h2 style="margin-top:8px;">法人専用窓口で<br><span class="gold">無料お見積もり</span></h2>
+    <p>担当：代表取締役 安食 成史　／　即日対応・現地調査無料・複数拠点歓迎</p>
+    <div class="cta-row">
+      <a href="tel:0120-168-885" class="btn-primary">📞 0120-168-885 にかける</a>
+      <a href="tel:045-744-8885" class="btn-outline">☎️ 045-744-8885</a>
+    </div>
+  </div>
+
+  <div class="form-area" style="text-align:left;color:var(--text);">
+    <p style="font-size:18px;font-weight:800;color:var(--navy);">📝 法人お問い合わせフォーム</p>
+    <p style="font-size:13px;color:var(--gray-500);margin-top:4px;">送信ボタンを押すとメールアプリが起動します。</p>
+    <form onsubmit="submitB2B(event)" style="margin-top:24px;">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">会社名 *</label>
+          <input id="b-company" class="form-input" type="text" placeholder="例：株式会社○○" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご担当者名 *</label>
+          <input id="b-name" class="form-input" type="text" placeholder="例：山田 太郎" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">電話番号 *</label>
+          <input id="b-tel" class="form-input" type="tel" placeholder="例：03-0000-0000" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">メールアドレス *</label>
+          <input id="b-email" class="form-input" type="email" placeholder="例：info@example.co.jp" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">業種</label>
+          <select id="b-industry" class="form-select">
+            <option value="">選択してください</option>
+            <option>飲食店・チェーン</option>
+            <option>医療・介護施設</option>
+            <option>ホテル・宿泊施設</option>
+            <option>商業施設・モール</option>
+            <option>コンビニ・小売</option>
+            <option>オフィス・事務所</option>
+            <option>工場・物流倉庫</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">拠点数</label>
+          <select id="b-locations" class="form-select">
+            <option value="">選択してください</option>
+            <option>1拠点</option>
+            <option>2〜4拠点</option>
+            <option>5〜9拠点</option>
+            <option>10拠点以上</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">ご相談内容 *</label>
+        <textarea id="b-msg" class="form-textarea" placeholder="例：3店舗ある飲食店の月次定期清掃を検討中。床ワックス・換気扇・グリストラップを含めた一括見積もりを希望。" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">📧 法人専用窓口へ送信する</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">ACS総合ビルメンテナンス</p>
+        <p class="footer-brand-name" style="margin-top:8px;font-size:14px;">株式会社 Ai Clean Systems</p>
+        <p class="footer-brand-sub">代表取締役：安食 成史（あじき なりひと）<br>〒246-0031 神奈川県横浜市瀬谷区瀬谷6-3-21</p>
+        <p class="footer-brand-sub" style="margin-top:12px;">フリーダイヤル：<a href="tel:0120-168-885" style="color:white;">0120-168-885</a><br>TEL：<a href="tel:045-744-8885" style="color:white;">045-744-8885</a> ／ FAX：045-744-8886<br>携帯：<a href="tel:080-5875-2836" style="color:white;">080-5875-2836</a><br>E-mail：<a href="mailto:ancs_no1@jf6.so-net.ne.jp" style="color:white;">ancs_no1@jf6.so-net.ne.jp</a></p>
+      </div>
+      <div class="footer-col">
+        <h5>法人ページ</h5>
+        <a href="#benefits">5つの価値</a>
+        <a href="#services">8つのサービス</a>
+        <a href="#plans">月額プラン</a>
+        <a href="#flow">導入の流れ</a>
+        <a href="#contact">法人窓口</a>
+      </div>
+      <div class="footer-col">
+        <h5>関連リンク</h5>
+        <a href="/">トップページ（個人・法人共通）</a>
+        <a href="/#pricing">日常清掃料金プラン</a>
+        <a href="/#periodic">定期清掃メニュー</a>
+        <a href="/#area">対応エリア</a>
+        <a href="/#cases">施工事例</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 株式会社 Ai Clean Systems. All rights reserved. ／ 神奈川・東京・埼玉・千葉 首都圏全域対応
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitB2B(e) {
+  e.preventDefault();
+  const company = document.getElementById('b-company').value;
+  const name = document.getElementById('b-name').value;
+  const tel = document.getElementById('b-tel').value;
+  const email = document.getElementById('b-email').value;
+  const industry = document.getElementById('b-industry').value || '（未選択）';
+  const locations = document.getElementById('b-locations').value || '（未選択）';
+  const msg = document.getElementById('b-msg').value;
+  const subject = encodeURIComponent('【法人見積もり依頼】' + company + ' ' + name + ' 様');
+  const body = encodeURIComponent(
+    '株式会社 Ai Clean Systems 御中\n\n' +
+    '法人お問い合わせフォームから、見積もり依頼が届いています。\n\n' +
+    '━━━━━━━━━━━━━━━━━━━━\n' +
+    '■ 会社名: ' + company + '\n' +
+    '■ ご担当者名: ' + name + '\n' +
+    '■ 電話番号: ' + tel + '\n' +
+    '■ メールアドレス: ' + email + '\n' +
+    '■ 業種: ' + industry + '\n' +
+    '■ 拠点数: ' + locations + '\n' +
+    '━━━━━━━━━━━━━━━━━━━━\n\n' +
+    '【ご相談内容】\n' + msg + '\n\n' +
+    '━━━━━━━━━━━━━━━━━━━━\n' +
+    '※ ai-clean-systems.com/houjin/ の法人窓口から送信されました。'
+  );
+  window.location.href = 'mailto:ancs_no1@jf6.so-net.ne.jp?subject=' + subject + '&body=' + body;
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '📧 メールアプリを起動しました';
+  btn.style.background = '#16a34a';
+  setTimeout(() => { btn.textContent = '📧 法人専用窓口へ送信する'; btn.style.background = ''; }, 5000);
+}
+</script>
+
+</body>
+</html>
