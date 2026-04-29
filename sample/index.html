@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>横浜・神奈川の店舗清掃・定期清掃・特殊清掃なら | Ai Clean Systems</title>
+<meta name="description" content="横浜・神奈川を拠点に、店舗清掃・定期清掃・特殊清掃を承る総合清掃会社。飲食店・医療施設・介護施設・オフィス・マンション・住宅まで対応。床洗浄、エアコン分解洗浄、厨房清掃、排水管高圧洗浄まで現地見積もり無料。フリーダイヤル0120-168-885。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #071827;
+  --navy-2: #0d2336;
+  --blue: #1688df;
+  --blue-dark: #0f6cb6;
+  --cyan: #2dd6f6;
+  --green: #35c889;
+  --green-dark: #2aa46d;
+  --orange: #ff9f2f;
+  --paper: #f5f8fb;
+  --line: #dbe6ef;
+  --text: #142333;
+  --muted: #66798c;
+  --white: #fff;
+  --shadow: 0 20px 60px rgba(7,24,39,.16);
+  --shadow-sm: 0 10px 26px rgba(7,24,39,.05);
+  --radius: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--paper);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.site { background: var(--white); }
+
+/* Topbar */
+.topbar { background: var(--navy); color: rgba(255,255,255,.88); font-size: 13px; }
+.topbar-inner, .header-inner, .container, .hero-inner {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.topbar-inner {
+  min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.topbar strong { color: var(--cyan); }
+
+/* Header */
+header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--navy); white-space: nowrap; }
+.brand-mark {
+  width: 42px; height: 42px; border-radius: 8px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: var(--white); font-weight: 900; font-size: 18px;
+  box-shadow: 0 10px 26px rgba(22,136,223,.28);
+}
+.brand small { display: block; margin-top: -3px; color: var(--muted); font-size: 11px; font-weight: 700; }
+nav { display: flex; align-items: center; gap: 22px; color: #425467; font-size: 14px; font-weight: 700; }
+nav a:hover { color: var(--blue); }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 44px; padding: 0 18px; border-radius: 6px;
+  font-weight: 800; font-size: 14px; border: 1px solid transparent;
+  white-space: nowrap; transition: all .2s; cursor: pointer;
+}
+.btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 12px 30px rgba(22,136,223,.28); }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-call { background: var(--green); color: var(--white); box-shadow: 0 12px 30px rgba(53,200,137,.24); }
+.btn-call:hover { background: var(--green-dark); }
+.btn-outline { background: var(--white); border-color: var(--line); color: var(--navy); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn-line { background: #06c755; color: var(--white); box-shadow: 0 12px 30px rgba(6,199,85,.24); }
+
+/* Hero */
+.hero {
+  position: relative; color: var(--white); overflow: hidden;
+  background:
+    linear-gradient(110deg, rgba(7,24,39,.96) 0%, rgba(7,24,39,.86) 46%, rgba(7,24,39,.5) 100%),
+    radial-gradient(circle at 80% 20%, rgba(45,214,246,.34), transparent 32%),
+    linear-gradient(135deg, #102d46, #071827);
+}
+.hero::after {
+  content: ""; position: absolute; inset: auto 0 0; height: 90px;
+  background: linear-gradient(180deg, transparent, rgba(245,248,251,.95));
+  pointer-events: none; z-index: 1;
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  min-height: 680px;
+  display: grid; grid-template-columns: 1.02fr .98fr; gap: 48px;
+  align-items: center; padding: 72px 0 92px;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin-bottom: 18px; padding: 7px 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px; background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.9); font-size: 13px; font-weight: 800;
+}
+.hero h1 { margin: 0; font-size: 52px; line-height: 1.12; }
+.hero h1 span { color: var(--cyan); }
+.hero p { max-width: 620px; margin: 22px 0 0; color: rgba(255,255,255,.82); font-size: 17px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.hero-badges {
+  display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 30px;
+}
+.hero-badge {
+  padding: 13px 12px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius);
+  background: rgba(255,255,255,.08); color: rgba(255,255,255,.92);
+  font-size: 12px; font-weight: 800; text-align: center;
+}
+
+/* Hero visual with slideshow */
+.hero-visual { position: relative; min-height: 520px; }
+.photo-board {
+  position: absolute; inset: 0 0 0 46px; border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow); background: #102d46;
+}
+.photo-board img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; animation: heroFade 20s infinite;
+}
+.photo-board img:nth-child(1) { animation-delay: 0s; }
+.photo-board img:nth-child(2) { animation-delay: 4s; }
+.photo-board img:nth-child(3) { animation-delay: 8s; }
+.photo-board img:nth-child(4) { animation-delay: 12s; }
+.photo-board img:nth-child(5) { animation-delay: 16s; }
+@keyframes heroFade {
+  0% { opacity: 0; transform: scale(1.06); }
+  4% { opacity: 1; }
+  20% { opacity: 1; transform: scale(1); }
+  24% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.photo-board::after {
+  content: "CLEANING IN PROGRESS";
+  position: absolute; left: 24px; bottom: 24px;
+  color: var(--white); font-size: 11px; font-weight: 900; letter-spacing: 1px;
+  background: rgba(0,0,0,.5); padding: 6px 12px; border-radius: 4px;
+  z-index: 2;
+}
+.quote-card, .stat-card {
+  position: absolute; z-index: 3; border-radius: 10px;
+  background: var(--white); color: var(--text); box-shadow: var(--shadow);
+}
+.quote-card { left: 0; bottom: 44px; width: 240px; padding: 20px; }
+.quote-card strong { display: block; color: var(--navy); font-size: 26px; line-height: 1; }
+.quote-card span { color: var(--muted); font-size: 13px; font-weight: 700; }
+.stat-card { right: -10px; top: 68px; width: 200px; padding: 18px; }
+.stat-card b { display: block; color: var(--blue); font-size: 32px; line-height: 1; font-weight: 900; }
+.stat-card span { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+/* Sections */
+section { padding: 84px 0; }
+.section-head {
+  display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 34px;
+}
+.label { color: var(--blue); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+.cases .label { color: var(--cyan); }
+h2 { color: var(--navy); font-size: 34px; line-height: 1.28; margin: 6px 0 0; }
+.lead { max-width: 520px; margin: 0; color: var(--muted); font-weight: 600; }
+
+/* Problems */
+.problem-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+.problem {
+  display: flex; gap: 12px; padding: 18px;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); font-weight: 800;
+}
+.problem i {
+  width: 28px; height: 28px; flex: 0 0 auto; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #e8f8f2; color: var(--green); font-style: normal; font-weight: 900;
+}
+.problem-closer {
+  margin-top: 28px; padding: 24px 28px; background: var(--paper); border-radius: var(--radius);
+  color: var(--navy); font-weight: 700; line-height: 1.7;
+}
+
+/* Services */
+.services { background: var(--paper); }
+.service-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.service-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: 10px;
+  overflow: hidden; box-shadow: 0 16px 40px rgba(7,24,39,.08); transition: transform .3s;
+}
+.service-card:hover { transform: translateY(-4px); }
+.service-photo { height: 200px; position: relative; overflow: hidden; }
+.service-photo img { width: 100%; height: 100%; object-fit: cover; }
+.service-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(7,24,39,.55) 100%);
+}
+.service-photo .service-pill {
+  position: absolute; top: 14px; left: 14px; z-index: 2;
+  padding: 5px 12px; border-radius: 999px;
+  background: rgba(255,255,255,.94); color: var(--navy);
+  font-size: 11px; font-weight: 900; letter-spacing: 1px;
+}
+.service-body { padding: 22px; }
+.service-body h3 { margin: 0 0 10px; color: var(--navy); font-size: 21px; line-height: 1.4; }
+.service-body p { margin: 0 0 18px; color: var(--muted); font-weight: 600; font-size: 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  padding: 5px 9px; border-radius: 999px;
+  background: #eef6fc; color: #24658e; font-size: 12px; font-weight: 800;
+}
+
+/* Reasons */
+.reasons-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+.reason {
+  padding: 24px 18px; border-radius: var(--radius);
+  border: 1px solid var(--line); background: var(--white);
+}
+.reason b { display: block; color: var(--blue); font-size: 28px; line-height: 1; margin-bottom: 14px; font-weight: 900; }
+.reason h3 { margin: 0 0 8px; color: var(--navy); font-size: 17px; line-height: 1.45; }
+.reason p { margin: 0; color: var(--muted); font-size: 13px; font-weight: 600; }
+
+/* Cases */
+.cases { background: linear-gradient(180deg, var(--navy), var(--navy-2)); color: var(--white); }
+.cases h2, .contact h2 { color: var(--white); }
+.cases .lead, .contact .lead { color: rgba(255,255,255,.72); }
+.case-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.case {
+  overflow: hidden; border-radius: 10px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+}
+.case-photo {
+  position: relative; height: 200px; overflow: hidden;
+  background: linear-gradient(135deg, #1f2d3a, #0d2336);
+}
+.case-photo img { width: 100%; height: 100%; object-fit: cover; }
+.case-photo::before {
+  content: "AFTER"; position: absolute; top: 12px; left: 12px; z-index: 2;
+  padding: 4px 10px; border-radius: 4px;
+  background: var(--cyan); color: var(--navy);
+  font-size: 11px; font-weight: 900; letter-spacing: 1px;
+}
+.case-body { padding: 18px 18px 22px; }
+.case-body h3 { margin: 0 0 8px; font-size: 17px; color: var(--white); font-weight: 800; }
+.case-body p { margin: 0; color: rgba(255,255,255,.7); font-size: 13px; font-weight: 600; }
+.case-meta {
+  display: flex; gap: 14px; margin-top: 12px;
+  font-size: 11px; color: var(--cyan); font-weight: 800; letter-spacing: 1px;
+}
+
+/* Price */
+.price-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; }
+.price {
+  padding: 18px; border-radius: var(--radius); background: var(--white);
+  border: 1px solid var(--line); box-shadow: 0 12px 28px rgba(7,24,39,.06);
+}
+.price span { display: block; color: var(--muted); font-size: 12px; font-weight: 800; }
+.price b { display: block; margin-top: 5px; color: var(--navy); font-size: 24px; line-height: 1; font-weight: 900; }
+.price small { color: var(--muted); font-weight: 700; font-size: 12px; }
+.price-note {
+  margin-top: 24px; padding: 18px 22px;
+  background: var(--paper); border-radius: var(--radius);
+  font-size: 13px; color: var(--muted); font-weight: 600;
+}
+
+/* Area */
+.area { background: var(--paper); }
+.area-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; margin-top: 24px;
+}
+.area-card {
+  padding: 22px; background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm);
+}
+.area-card b { display: block; color: var(--navy); font-size: 15px; font-weight: 900; margin-bottom: 8px; }
+.area-card p { margin: 0; font-size: 13px; color: var(--muted); font-weight: 600; line-height: 1.7; }
+
+/* Flow */
+.flow-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; }
+.flow-step {
+  position: relative; padding: 24px 16px; text-align: center;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.flow-num {
+  width: 42px; height: 42px; margin: 0 auto 12px;
+  border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: var(--white); display: grid; place-items: center; font-weight: 900; font-size: 18px;
+  box-shadow: 0 8px 18px rgba(22,136,223,.3);
+}
+.flow-step h3 { font-size: 14px; color: var(--navy); margin-bottom: 6px; }
+.flow-step p { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 10px; }
+.faq {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden;
+}
+.faq summary {
+  padding: 20px 22px; font-weight: 800; color: var(--navy); cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-size: 15px; list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; color: var(--blue); font-size: 24px; font-weight: 900; flex: 0 0 auto;
+}
+.faq[open] summary::after { content: "−"; }
+.faq-body {
+  padding: 0 22px 22px; color: var(--muted); font-size: 14px; font-weight: 600; line-height: 1.8;
+}
+
+/* Contact */
+.contact {
+  color: var(--white); padding-bottom: 110px;
+  background: linear-gradient(135deg, rgba(7,24,39,.94), rgba(13,35,54,.88)), linear-gradient(135deg, #0f3150, #071827);
+}
+.contact-box { display: grid; grid-template-columns: .95fr 1.05fr; gap: 30px; align-items: stretch; }
+.contact-panel {
+  padding: 30px; border-radius: 12px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+}
+.contact-panel p { color: rgba(255,255,255,.78); font-size: 14px; }
+.phone { margin: 18px 0; color: var(--cyan); font-size: 36px; font-weight: 900; line-height: 1; }
+.phone-sub { font-size: 12px; color: rgba(255,255,255,.6); margin-top: -8px; font-weight: 600; }
+.form-mock { display: grid; gap: 12px; }
+.form-mock input, .form-mock select, .form-mock textarea {
+  min-height: 48px; padding: 13px 14px; border-radius: 6px;
+  background: var(--white); color: var(--text); border: 0;
+  font-weight: 600; font-size: 14px; font-family: inherit;
+}
+.form-mock textarea { min-height: 112px; resize: vertical; }
+
+/* Footer */
+footer {
+  background: #050d17; color: rgba(255,255,255,.6);
+  padding: 48px 0 32px; font-size: 13px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 32px; padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.footer-brand b { color: var(--white); font-size: 17px; font-weight: 900; display: block; margin-bottom: 12px; }
+.footer-brand p { line-height: 1.8; }
+.footer-brand a { color: var(--cyan); }
+.footer-col h4 { color: var(--white); font-size: 13px; margin-bottom: 12px; font-weight: 800; }
+.footer-col a { display: block; padding: 4px 0; color: rgba(255,255,255,.55); }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { padding-top: 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,.4); }
+
+/* Mobile fixed CTA */
+.mobile-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  display: none; grid-template-columns: repeat(3, 1fr); padding: 8px; gap: 8px;
+  background: rgba(255,255,255,.96); border-top: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+.mobile-cta a {
+  min-height: 48px; display: grid; place-items: center; border-radius: 6px;
+  color: var(--white); font-size: 13px; font-weight: 900;
+}
+.mobile-cta a:nth-child(1) { background: var(--green); }
+.mobile-cta a:nth-child(2) { background: #06c755; }
+.mobile-cta a:nth-child(3) { background: var(--orange); }
+
+/* Responsive */
+@media (max-width: 980px) {
+  nav { display: none; }
+  .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 48px 0 72px; }
+  .hero h1 { font-size: 40px; }
+  .hero-visual { min-height: 380px; }
+  .problem-grid, .service-grid, .case-grid { grid-template-columns: 1fr; }
+  .reasons-grid, .price-grid, .area-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .flow-grid { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .flow-step { padding: 16px 8px; }
+  .contact-box { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .topbar-inner { justify-content: center; text-align: center; flex-wrap: wrap; gap: 6px; }
+  .topbar-inner span:last-child { display: none; }
+  .header-actions .btn-call { display: none; }
+  .brand small { display: none; }
+  .hero h1 { font-size: 30px; }
+  .hero p { font-size: 14px; }
+  .hero-badges { grid-template-columns: repeat(2, 1fr); }
+  .hero-visual { min-height: 320px; }
+  .photo-board { inset: 0; }
+  .quote-card { width: 200px; bottom: 18px; padding: 14px; }
+  .quote-card strong { font-size: 22px; }
+  .stat-card { right: 8px; top: 16px; width: 160px; padding: 14px; }
+  .stat-card b { font-size: 24px; }
+  .section-head { display: block; }
+  h2 { font-size: 25px; }
+  section { padding: 56px 0; }
+  .reasons-grid, .price-grid, .area-grid { grid-template-columns: 1fr; }
+  .flow-grid { grid-template-columns: repeat(2, 1fr); }
+  .mobile-cta { display: grid; }
+  body { padding-bottom: 80px; }
+}
+</style>
+</head>
+<body>
+<div class="site">
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span><strong>初回限定 10%OFF</strong>　見積もり無料　神奈川・東京・埼玉・千葉対応</span>
+    <span>横浜市瀬谷区発の総合清掃会社</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#">
+      <span class="brand-mark">Ai</span>
+      <span>Clean Systems<small>ACS総合ビルメンテナンス</small></span>
+    </a>
+    <nav>
+      <a href="#services">サービス</a>
+      <a href="#price">料金</a>
+      <a href="#cases">施工事例</a>
+      <a href="#area">対応エリア</a>
+      <a href="#flow">ご依頼の流れ</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-call" href="tel:0120168885">📞 電話で相談</a>
+      <a class="btn btn-primary" href="#contact">無料見積もり</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">プロの清掃・特殊清掃・高圧洗浄</div>
+      <h1>横浜・神奈川の<br><span>店舗清掃・定期清掃</span><br>特殊清掃なら</h1>
+      <p>飲食店・医療施設・介護施設・オフィス・マンション・一般住宅まで対応。床洗浄、エアコン分解洗浄、厨房清掃、排水管高圧洗浄まで現地見積もり無料でご相談いただけます。</p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href="tel:0120168885">📞 0120-168-885 に電話する</a>
+        <a class="btn btn-outline" href="#contact">LINE・フォームで相談</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge">神奈川・東京・埼玉・千葉</div>
+        <div class="hero-badge">見積もり無料</div>
+        <div class="hero-badge">法人・個人対応</div>
+        <div class="hero-badge">最短即日相談</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="清掃現場のイメージ">
+      <div class="photo-board">
+        <img src="/assets/cases/case-01-floor-wax.jpg" alt="床洗浄ワックス">
+        <img src="/assets/cases/case-02-ac-cleaning.jpg" alt="エアコン分解洗浄">
+        <img src="/assets/cases/case-04-carpet.jpg" alt="カーペットクリーニング">
+        <img src="/assets/cases/case-05-pressure-wash.jpg" alt="高圧洗浄">
+        <img src="/assets/cases/case-06-kitchen.jpg" alt="厨房清掃">
+      </div>
+      <div class="stat-card"><b>500+</b><span>施工実績</span></div>
+      <div class="quote-card"><strong>0円</strong><span>現地見積もり・相談無料</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Problems -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">Cleaning Problems</div>
+        <h2>こんな清掃のお悩み、<br>ありませんか？</h2>
+      </div>
+      <p class="lead">現場の状態を確認したうえで、必要な作業だけを分かりやすくご提案します。</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem"><i>✓</i>厨房の油汚れや臭いが落ちない</div>
+      <div class="problem"><i>✓</i>床の黒ずみやワックス剥がれが気になる</div>
+      <div class="problem"><i>✓</i>エアコンのカビ臭・効きの悪さを改善したい</div>
+      <div class="problem"><i>✓</i>排水管の詰まりや悪臭を早く解決したい</div>
+      <div class="problem"><i>✓</i>退去後の清掃や特殊清掃を急ぎで頼みたい</div>
+      <div class="problem"><i>✓</i>定期清掃を任せられる業者を探している</div>
+    </div>
+    <div class="problem-closer">
+      Ai Clean Systems は、現場の状態を確認したうえで、必要な作業だけを分かりやすくご提案します。
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">Main Services</div>
+        <h2>店舗・施設・住まいの清掃を<br>まとめて対応</h2>
+      </div>
+      <p class="lead">8つの清掃メニューを、ご相談しやすいよう3カテゴリに整理してご案内します。</p>
+    </div>
+    <div class="service-grid">
+      <article class="service-card">
+        <div class="service-photo">
+          <img src="/assets/cases/case-06-kitchen.jpg" alt="店舗・飲食店向け清掃">
+          <span class="service-pill">For Store</span>
+        </div>
+        <div class="service-body">
+          <h3>店舗・飲食店向け清掃</h3>
+          <p>厨房、グリストラップ、換気扇、床、ガラス、客席まわりまで対応。営業時間外や定期契約もご相談ください。</p>
+          <div class="tags">
+            <span class="tag">厨房清掃</span>
+            <span class="tag">床洗浄</span>
+            <span class="tag">換気扇</span>
+            <span class="tag">グリストラップ</span>
+            <span class="tag">ガラス清掃</span>
+          </div>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-photo">
+          <img src="/assets/cases/case-02-ac-cleaning.jpg" alt="法人・施設向け定期清掃">
+          <span class="service-pill">For Business</span>
+        </div>
+        <div class="service-body">
+          <h3>法人・施設向け定期清掃</h3>
+          <p>オフィス、医療施設、介護施設、ホテル、商業施設など、利用者の印象と衛生環境を守る定期清掃をご提案します。</p>
+          <div class="tags">
+            <span class="tag">日常清掃</span>
+            <span class="tag">トイレ清掃</span>
+            <span class="tag">床メンテナンス</span>
+            <span class="tag">エアコン</span>
+            <span class="tag">共用部</span>
+          </div>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-photo">
+          <img src="/assets/cases/case-05-pressure-wash.jpg" alt="緊急・専門清掃">
+          <span class="service-pill">For Emergency</span>
+        </div>
+        <div class="service-body">
+          <h3>緊急・専門清掃</h3>
+          <p>他社で断られた現場や、急ぎの清掃もご相談ください。特殊清掃、排水管高圧洗浄、害虫駆除、粗大ごみ処理まで対応します。</p>
+          <div class="tags">
+            <span class="tag">特殊清掃</span>
+            <span class="tag">排水管高圧洗浄</span>
+            <span class="tag">害虫駆除</span>
+            <span class="tag">粗大ごみ処理</span>
+            <span class="tag">原状回復</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Reasons -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">Why Choose Us</div>
+        <h2>Ai Clean Systems が<br>選ばれる理由</h2>
+      </div>
+      <p class="lead">清掃をただの作業で終わらせず、汚れの原因から改善します。</p>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason">
+        <b>01</b>
+        <h3>直接施工で適正価格</h3>
+        <p>中間業者を挟まず、必要な作業だけを分かりやすくご提案します。</p>
+      </div>
+      <div class="reason">
+        <b>02</b>
+        <h3>幅広い専門清掃</h3>
+        <p>床・厨房・排水管・空調・特殊清掃まで、まとめて対応できます。</p>
+      </div>
+      <div class="reason">
+        <b>03</b>
+        <h3>法人も個人も対応</h3>
+        <p>飲食店、医療施設、オフィス、マンション、住宅まで対応します。</p>
+      </div>
+      <div class="reason">
+        <b>04</b>
+        <h3>急ぎの相談も柔軟</h3>
+        <p>詰まり、悪臭、退去清掃、特殊清掃などもまずはお電話ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cases -->
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">Case Studies</div>
+        <h2>施工事例</h2>
+      </div>
+      <p class="lead">実際の施工写真と、作業内容・料金目安・作業時間をセットでご紹介します。</p>
+    </div>
+    <div class="case-grid">
+      <article class="case">
+        <div class="case-photo"><img src="/assets/cases/case-06-kitchen.jpg" alt="飲食店 厨房清掃"></div>
+        <div class="case-body">
+          <h3>横浜市 飲食店 厨房清掃</h3>
+          <p>レンジフード、グリストラップ、床洗浄を実施。油汚れと臭いを重点除去し営業前に完了。</p>
+          <div class="case-meta">
+            <span>4時間</span>
+            <span>¥38,000〜</span>
+          </div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case-photo"><img src="/assets/cases/case-02-ac-cleaning.jpg" alt="オフィス エアコン分解洗浄"></div>
+        <div class="case-body">
+          <h3>神奈川県 オフィス エアコン</h3>
+          <p>天カセエアコン分解洗浄。カビ臭・ホコリを除去し空調効率を改善。</p>
+          <div class="case-meta">
+            <span>半日</span>
+            <span>¥20,000〜 / 台</span>
+          </div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case-photo"><img src="/assets/cases/case-05-pressure-wash.jpg" alt="排水管高圧洗浄"></div>
+        <div class="case-body">
+          <h3>横浜市 マンション 高圧洗浄</h3>
+          <p>排水管の悪臭・流れの悪さを確認後、高圧洗浄で内部を一掃。</p>
+          <div class="case-meta">
+            <span>2〜3時間</span>
+            <span>¥55,000〜</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Price -->
+<section id="price">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">Price Guide</div>
+        <h2>料金目安</h2>
+      </div>
+      <p class="lead">現場の広さ、汚れ具合、作業時間により変動します。無料見積もりで正確な金額をご案内します。</p>
+    </div>
+    <div class="price-grid">
+      <div class="price"><span>日常清掃</span><b>¥7,500〜</b><small>小規模店舗・住宅など</small></div>
+      <div class="price"><span>床洗浄ワックス</span><b>¥20,000〜</b><small>50m² 目安</small></div>
+      <div class="price"><span>床洗浄剥離ワックス</span><b>¥50,000〜</b><small>50m² 目安</small></div>
+      <div class="price"><span>エアコン分解洗浄</span><b>¥15,000〜</b><small>ルームエアコン</small></div>
+      <div class="price"><span>エアコン天カセ</span><b>¥20,000〜</b><small>1台あたり</small></div>
+      <div class="price"><span>厨房清掃</span><b>¥8,000〜</b><small>レンジフード等</small></div>
+      <div class="price"><span>特殊清掃</span><b>¥35,000〜</b><small>現場状況により変動</small></div>
+      <div class="price"><span>排水管高圧洗浄</span><b>¥55,000〜</b><small>戸建て・マンション</small></div>
+    </div>
+    <p class="price-note">※料金は税込価格です。面積・汚れ具合・作業時間により変動します。詳細は無料現地見積もりにてご確認ください。</p>
+  </div>
+</section>
+
+<!-- Area -->
+<section class="area" id="area">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">Service Area</div>
+        <h2>横浜市瀬谷区を拠点に、<br>首都圏全域対応</h2>
+      </div>
+      <p class="lead">神奈川県全域を中心に、東京都、埼玉県、千葉県まで対応しています。法人案件・定期契約・大型案件はエリア外もご相談ください。</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-card"><b>神奈川県</b><p>横浜市・川崎市・相模原市・大和市・藤沢市・厚木市 ほか県内全域</p></div>
+      <div class="area-card"><b>東京都</b><p>23区・多摩地区</p></div>
+      <div class="area-card"><b>埼玉県</b><p>県南部中心</p></div>
+      <div class="area-card"><b>千葉県</b><p>県北西部中心</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Flow -->
+<section id="flow">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">How It Works</div>
+        <h2>ご依頼の流れ</h2>
+      </div>
+      <p class="lead">お問い合わせから施工完了まで、最短即日対応。</p>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-step"><div class="flow-num">1</div><h3>お問い合わせ</h3><p>電話・LINE・フォーム</p></div>
+      <div class="flow-step"><div class="flow-num">2</div><h3>無料見積もり</h3><p>写真または現地確認</p></div>
+      <div class="flow-step"><div class="flow-num">3</div><h3>日程調整</h3><p>柔軟にスケジュール</p></div>
+      <div class="flow-step"><div class="flow-num">4</div><h3>施工</h3><p>プロが丁寧に対応</p></div>
+      <div class="flow-step"><div class="flow-num">5</div><h3>確認・お支払い</h3><p>仕上がり確認後</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">FAQ</div>
+        <h2>よくある質問</h2>
+      </div>
+      <p class="lead">お問い合わせの多いご質問をまとめました。その他もお気軽にご相談ください。</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>見積もりは無料ですか？</summary>
+        <div class="faq-body">はい、無料です。写真での概算見積もり、現地確認での見積もりに対応しています。</div>
+      </details>
+      <details class="faq">
+        <summary>急ぎの依頼はできますか？</summary>
+        <div class="faq-body">可能な限り対応します。排水管の詰まり、悪臭、退去前後の清掃、特殊清掃など、急ぎの場合はお電話ください。</div>
+      </details>
+      <details class="faq">
+        <summary>夜間や営業時間外の作業はできますか？</summary>
+        <div class="faq-body">店舗・オフィス・施設の営業時間に合わせて、早朝・夜間作業もご相談いただけます。</div>
+      </details>
+      <details class="faq">
+        <summary>法人の定期契約はできますか？</summary>
+        <div class="faq-body">可能です。月1回から週6回まで、現場の状況に合わせてご提案します。</div>
+      </details>
+      <details class="faq">
+        <summary>写真だけで見積もりできますか？</summary>
+        <div class="faq-body">概算であれば可能です。正確な金額は、現地確認後にご提示します。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div class="contact-panel">
+        <div class="label" style="color:var(--cyan);">Contact</div>
+        <h2>清掃の悩み、まずは<br>無料でご相談ください</h2>
+        <p>汚れの状態、広さ、ご希望日時が分かれば、概算費用と対応可否をスピーディーにご案内します。</p>
+        <div class="phone">0120-168-885</div>
+        <div class="phone-sub">フリーダイヤル / 通話料無料 / 9:00〜20:00</div>
+        <div class="hero-cta" style="margin-top:24px;">
+          <a class="btn btn-call" href="tel:0120168885">📞 電話する</a>
+          <a class="btn btn-line" href="#">💬 LINEで写真相談</a>
+        </div>
+      </div>
+      <div class="contact-panel">
+        <div class="form-mock">
+          <input type="text" placeholder="お名前 *" required>
+          <input type="tel" placeholder="電話番号 *" required>
+          <select>
+            <option>対象施設の種別 *</option>
+            <option>飲食店・店舗</option>
+            <option>オフィス・事務所</option>
+            <option>医療・介護施設</option>
+            <option>マンション・住宅</option>
+            <option>工場・倉庫</option>
+            <option>その他</option>
+          </select>
+          <textarea placeholder="ご希望のサービス・ご相談内容"></textarea>
+          <a class="btn btn-primary" href="#" style="min-height:52px;">📧 無料で見積もりを依頼する</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <b>株式会社 Ai Clean Systems</b>
+        <p>
+          ACS総合ビルメンテナンス<br>
+          代表取締役：安食 成史<br>
+          〒246-0031 神奈川県横浜市瀬谷区瀬谷6-3-21<br>
+          フリーダイヤル：<a href="tel:0120168885">0120-168-885</a><br>
+          TEL：<a href="tel:0457448885">045-744-8885</a> / FAX：045-744-8886<br>
+          E-mail：<a href="mailto:ancs_no1@jf6.so-net.ne.jp">ancs_no1@jf6.so-net.ne.jp</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <a href="#services">店舗・飲食店清掃</a>
+        <a href="#services">法人・施設定期清掃</a>
+        <a href="#services">緊急・専門清掃</a>
+        <a href="#price">料金目安</a>
+        <a href="#cases">施工事例</a>
+      </div>
+      <div class="footer-col">
+        <h4>会社情報</h4>
+        <a href="#area">対応エリア</a>
+        <a href="#flow">ご依頼の流れ</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="/houjin/">法人専用ページ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 株式会社 Ai Clean Systems. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile fixed CTA -->
+<div class="mobile-cta">
+  <a href="tel:0120168885">📞 電話</a>
+  <a href="#contact">💬 LINE</a>
+  <a href="#contact">📧 見積もり</a>
+</div>
+
+</div>
+</body>
+</html>
