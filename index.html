@@ -263,14 +263,14 @@ nav a:hover { color: var(--blue-light); }
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  animation: heroSlide 25s infinite, heroZoom 25s infinite;
+  animation: heroSlide 20s infinite, heroZoom 20s infinite;
 }
 
 .hero-slide:nth-child(1) { animation-delay: 0s; }
-.hero-slide:nth-child(2) { animation-delay: 5s; }
-.hero-slide:nth-child(3) { animation-delay: 10s; }
-.hero-slide:nth-child(4) { animation-delay: 15s; }
-.hero-slide:nth-child(5) { animation-delay: 20s; }
+.hero-slide:nth-child(2) { animation-delay: 4s; }
+.hero-slide:nth-child(3) { animation-delay: 8s; }
+.hero-slide:nth-child(4) { animation-delay: 12s; }
+.hero-slide:nth-child(5) { animation-delay: 16s; }
 
 @keyframes heroSlide {
   0% { opacity: 0; }
@@ -310,14 +310,14 @@ nav a:hover { color: var(--blue-light); }
   border-radius: 999px;
   backdrop-filter: blur(8px);
   opacity: 0;
-  animation: captionFade 25s infinite;
+  animation: captionFade 20s infinite;
 }
 
 .hero-slide-caption:nth-child(6) { animation-delay: 0s; }
-.hero-slide-caption:nth-child(7) { animation-delay: 5s; }
-.hero-slide-caption:nth-child(8) { animation-delay: 10s; }
-.hero-slide-caption:nth-child(9) { animation-delay: 15s; }
-.hero-slide-caption:nth-child(10) { animation-delay: 20s; }
+.hero-slide-caption:nth-child(7) { animation-delay: 4s; }
+.hero-slide-caption:nth-child(8) { animation-delay: 8s; }
+.hero-slide-caption:nth-child(9) { animation-delay: 12s; }
+.hero-slide-caption:nth-child(10) { animation-delay: 16s; }
 
 @keyframes captionFade {
   0% { opacity: 0; transform: translateY(10px); }
@@ -811,13 +811,22 @@ footer {
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
-  .hero-image-side { display: none; }
+  .hero-image-side { display: flex; order: -1; }
+  .hero-img-main { height: 240px; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .stat-num { font-size: 22px; }
+  .stat-label { font-size: 10px; }
   nav { display: none; }
   .special-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .flow-steps::before { display: none; }
   .footer-top { flex-direction: column; }
   .footer-links { gap: 24px; }
+  .hero-slide-caption { font-size: 10px; padding: 4px 10px; bottom: 12px; left: 12px; }
+}
+@media (max-width: 480px) {
+  .hero-img-main { height: 200px; }
+  .hero-slide-caption { font-size: 9px; }
 }
 
 /* ========== ANIMATIONS ========== */
