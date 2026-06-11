@@ -251,7 +251,10 @@ def build(data, out_path, prev=None):
     toc = []
     if prev:
         toc.append('前回アクションの振り返り・継続課題')
-    toc += ['本日の実施作業（売場改善）', '店舗の現状と気づき（課題）',
+    toc += ['本日の実施作業（売場改善）']
+    if data.get('metrics'):
+        toc.append('数値で見る現状（POSデータ）')
+    toc += ['店舗の現状と気づき（課題）',
             'オーナーへの提案・合意事項', '翌週アクションプラン']
     if data.get('recommendations'):
         toc.append('重点課題と改善提案')
@@ -411,6 +414,53 @@ def build(data, out_path, prev=None):
                 p_run(cell, v, size=9.5, bold=True, color=scolor, align=WD_ALIGN_PARAGRAPH.CENTER)
             else:
                 p_run(cell, v, size=10)
+
+    # 数値で見る現状（POSデータ）
+    metrics = data.get('metrics', [])
+    if metrics:
+        section_bar('数値で見る現状（POSデータ）', color=BLUE)
+        if data.get('metrics_period'):
+            p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(3)
+            set_font(p.add_run(f"出典：{data['metrics_period']}"), size=9, color=GREYTX)
+        heads = ['分類', '指標', '自店', '基準', '読み取り']
+        hw = [Cm(1.8), Cm(3.4), Cm(3.4), Cm(2.6), Cm(6.4)]
+        mt = doc.add_table(rows=1, cols=len(heads))
+        mt.alignment = WD_TABLE_ALIGNMENT.CENTER
+        for i, w in enumerate(hw):
+            mt.columns[i].width = w
+        for cell, h in zip(mt.rows[0].cells, heads):
+            cell_shade(cell, NAVY); set_cell_borders(cell, color=WHITE, sz=4)
+            cell_margins(cell, 50, 50, 90, 90)
+            p_run(cell, h, size=10, bold=True, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
+        for ri, rd in enumerate(metrics):
+            row = list(rd) + [''] * (len(heads) - len(rd))
+            cells = mt.add_row().cells
+            bg = WHITE if ri % 2 == 0 else 'F2F6FA'
+            for ci, (cell, v) in enumerate(zip(cells, row)):
+                cell_shade(cell, bg); set_cell_borders(cell, color=LINE, sz=4)
+                cell_margins(cell, 50, 50, 90, 90)
+                p_run(cell, str(v), size=9.5, bold=(ci == 0), color=(NAVY if ci == 0 else None))
+        good = data.get('metrics_good', [])
+        warn = data.get('metrics_warn', [])
+        if good or warn:
+            spacer(3)
+            t = doc.add_table(rows=1, cols=2)
+            t.alignment = WD_TABLE_ALIGNMENT.CENTER
+            for i, w in enumerate([Cm(8.8), Cm(8.8)]):
+                t.columns[i].width = w
+            cell_shade(t.cell(0, 0), GREEN); cell_shade(t.cell(0, 1), RED)
+            for cell, head in [(t.cell(0, 0), '📈 良い兆し'), (t.cell(0, 1), '⚠ 注意シグナル')]:
+                set_cell_borders(cell, color=WHITE, sz=4); cell_margins(cell, 55, 55, 120, 120)
+                p_run(cell, head, size=10, bold=True, color=WHITE)
+            body = t.add_row().cells
+            cell_shade(body[0], LGREEN); cell_shade(body[1], 'FDECEA')
+            for cell, items, mc in [(body[0], good, GREEN), (body[1], warn, RED)]:
+                set_cell_borders(cell, color=LINE, sz=4); cell_margins(cell, 70, 70, 120, 120)
+                f = True
+                for it in items:
+                    if f:
+                        p_run(cell, '', size=2); f = False
+                    bullet(cell, it, marker='・', mcolor=mc, size=9.5)
 
     # 現状と気づき
     section_bar('店舗の現状と気づき（課題）', color=BLUE)
