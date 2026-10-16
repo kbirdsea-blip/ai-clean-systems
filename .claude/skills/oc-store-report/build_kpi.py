@@ -9,6 +9,7 @@ POSサマリーシート等から起こした KPI JSON を読み込み、
 使い方:
     python build_kpi.py <kpi.json> <output.docx>
 """
+import os
 import sys
 import json
 import datetime
@@ -18,6 +19,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_ALIGN_VERTICAL
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from verify_kpi import run_checks, fmt  # noqa: E402
 
 NAVY = '1F3B5C'; BLUE = '2E5E8C'; GREEN = '2E7D32'; ORANGE = 'E8821E'
 RED = 'C0392B'; WHITE = 'FFFFFF'; LINE = 'C9D3DF'; LGRAY = 'EEF1F5'
@@ -185,10 +189,39 @@ def build(data, out_path):
                 p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(2)
                 set_font(p.add_run(f"※ {s['note']}"), size=8.5, color=GREYTX)
 
-    # ----- カテゴリ別 前年差額 -----
-    cat = data.get('category_diff')
-    if cat:
-        heading(f"カテゴリ別 前年差額（{cat.get('unit','千円')}）　上位／下位")
+    # ----- 前回比較 -----
+    cmp = data.get('compare')
+    if cmp:
+        heading(cmp.get('title', '前回比較'))
+        heads = cmp.get('heads', ['指標', '前回', '今回', '判定・コメント'])
+        hw = [Cm(w) for w in cmp.get('widths', [4.2, 3.6, 3.6, 6.4])]
+        t = doc.add_table(rows=1, cols=len(heads))
+        t.alignment = WD_TABLE_ALIGNMENT.CENTER
+        for i, w in enumerate(hw):
+            t.columns[i].width = w
+        for cell, h in zip(t.rows[0].cells, heads):
+            shade(cell, NAVY); borders(cell, WHITE, 4); margins(cell)
+            put(cell, h, 9.5, bold=True, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
+        for ri, row in enumerate(cmp.get('rows', [])):
+            cells = t.add_row().cells
+            tone = row[-1] if row and row[-1] in TONE else None
+            vals = row[:-1] if tone else row
+            bg = WHITE if ri % 2 == 0 else 'F2F6FA'
+            for ci, (cell, v) in enumerate(zip(cells, vals)):
+                shade(cell, TONE[tone][0] if (tone and ci == len(vals) - 1) else bg)
+                borders(cell); margins(cell)
+                put(cell, str(v), 9.5, bold=(ci in (0, 2)),
+                    color=(NAVY if ci == 0 else (TONE[tone][1] if (tone and ci == len(vals) - 1) else None)))
+        if cmp.get('note'):
+            p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(2)
+            set_font(p.add_run(f"※ {cmp['note']}"), size=8.5, color=GREYTX)
+
+    # ----- カテゴリ別 前年差額（1つ or 複数） -----
+    cats = data.get('category_diff')
+    if isinstance(cats, dict):
+        cats = [cats]
+    for cat in (cats or []):
+        heading(cat.get('title', f"カテゴリ別 前年差額（{cat.get('unit','千円')}）　上位／下位"))
         ups = cat.get('up', []); downs = cat.get('down', [])
         mx = max([abs(v) for _, v in ups + downs] or [1])
         for name, v in ups:
@@ -237,6 +270,38 @@ def build(data, out_path):
         t = doc.add_table(rows=1, cols=1); no_borders(t)
         c = t.cell(0, 0); shade(c, LGRAY); borders(c, LINE, 4); margins(c, 70, 70, 140, 140)
         put(c, f"💡 {data['footer']}", 9.5, color='333333')
+
+    # ----- 検算・ダブルチェック結果 -----
+    checks = data.get('verify', [])
+    if checks or data.get('double_check'):
+        heading('検算・ダブルチェック結果', color=GREEN)
+        if data.get('double_check'):
+            p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(3)
+            set_font(p.add_run(data['double_check']), size=9, color='333333')
+        if checks:
+            res = run_checks(checks)
+            t = doc.add_table(rows=1, cols=4)
+            t.alignment = WD_TABLE_ALIGNMENT.CENTER
+            for i, w in enumerate([Cm(9.6), Cm(2.9), Cm(2.9), Cm(2.4)]):
+                t.columns[i].width = w
+            for cell, h in zip(t.rows[0].cells, ['検算項目', '再計算値', 'シート記載', '判定']):
+                shade(cell, NAVY); borders(cell, WHITE, 4); margins(cell, 40, 40, 90, 90)
+                put(cell, h, 9, bold=True, color=WHITE, align=WD_ALIGN_PARAGRAPH.CENTER)
+            for ri, r in enumerate(res):
+                cells = t.add_row().cells
+                bg = WHITE if ri % 2 == 0 else 'F2F6FA'
+                for cell in cells:
+                    shade(cell, bg); borders(cell); margins(cell, 35, 35, 90, 90)
+                put(cells[0], r['name'], 8.5)
+                put(cells[1], fmt(r['computed']), 8.5, align=WD_ALIGN_PARAGRAPH.RIGHT)
+                put(cells[2], fmt(r['expected']), 8.5, align=WD_ALIGN_PARAGRAPH.RIGHT)
+                put(cells[3], '✓ 一致' if r['ok'] else '✗ 不一致', 8.5, bold=True,
+                    color=(GREEN if r['ok'] else RED), align=WD_ALIGN_PARAGRAPH.CENTER)
+            ng = sum(1 for r in res if not r['ok'])
+            p = doc.add_paragraph(); p.paragraph_format.space_before = Pt(2)
+            set_font(p.add_run(f"検算 {len(res)}件中 一致 {len(res) - ng}件／不一致 {ng}件"
+                               "（端数は四捨五入差±1を許容）"), size=8.5, bold=True,
+                     color=(GREEN if ng == 0 else RED))
 
     doc.save(out_path)
     return out_path
